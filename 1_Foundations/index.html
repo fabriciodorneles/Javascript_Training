@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title> Curso Javascript </title>        
+    </head>
+    <body>
+    
+        <script>
+            var usuarios = [
+            {
+            nome: "Diego",
+            habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+            nome: "Gabriel",
+            habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+            ];
+            //{# O Diego possui as habilidades: Javascript, ReactJS, Redux
+            //O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir #}
+
+            function publicahabilidades(users){
+                for (user of users){
+                    console.log("O " + user.nome + " possui as habilidades: " + user.habilidades.join(', '))
+                }
+            }
+
+            publicahabilidades(usuarios);
+        </script>
+    </body>
+</html>
+

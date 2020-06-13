@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title >Curso de Javascript - Cap 2</title>        
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="nome" id="nome">
+            <button class="botao" >Adicionar</button>
+        </div>
+<div class="nav"></div>
+    </body>
+        <script>
+            // var  inputElement =document.getElementById('nome');
+            //var  inputElement =document.getElementsByTagName('input'); // retorna um vetor
+            //var  inputElement =document.getElementsByClassName('input'); // retorna um vetor
+            //var  inputElement =document.querySelector('div#app input'); 
+            // retorna um input que tá dentro de uma div com a class app que está dentro do body
+            //var  inputElement =document.querySelector('input[name=nome]'); 
+            // retorna um input que tem a propriedade name setada para nome
+            //var  inputElement =document.querySelector('input'); 
+            // retorna o primeiro input do código
+            //var  inputElement =document.querySelectorAll('input'); 
+            // retorna um array com todos os inputs do código
+            var inputElement = document.querySelector('input[name=nome]');
+            var btnElement = document.querySelector('button.botao');
+            btnElement.onclick = function() {
+                var texto = inputElement.value;
+                alert(texto);
+            }
+
+            //console.log(inputElement);
+        </script>
+</html>
