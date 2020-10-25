@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Button</title>
+</head>
+<body >
+    <button id="btSquare" >Create Square</button>    
+    <div id="squarecontainer"></div>
+
+</body>
+    <script>
+        var btCreateSquare = document.querySelector('#btSquare');
+        var bodyContainer = document.querySelector('#squarecontainer');
+        btCreateSquare.onclick = function() {
+            var square = document.createElement('div');
+            square.setAttribute('style', 'width:100px; height:100px; background-color: rgb(255, 0, 0);');//setou a propr href
+            square.setAttribute('onmouseover', 'changeColor(this)');
+            // square.style.maxWidth = 100;
+            // square.style.maxHeight = 100;
+            // square.style.backgroundColor = '#ff0000';
+            bodyContainer.appendChild(square);
+            }
+        
+        var squareList = document.querySelectorAll('.square1');
+        for (sqr in squareList){
+            sqr.mouseover
+        }
+        
+        function changeColor(quadr) {
+            quadr.setAttribute('style', 'width:100px; height:100px; background-color: '+getRandomColor());
+            //element.style.backgroundColor= '#223344';
+            //alert(quadr);
+
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        var newColor = getRandomColor(); // #E943F0
+    </script>
+</html>
