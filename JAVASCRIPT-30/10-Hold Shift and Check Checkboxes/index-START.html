@@ -97,15 +97,32 @@
 
 <script>
 let firstClick = 0;
+let lastShitClicked = 0;
 const checkBoxes = document.querySelectorAll('input');
-checkBoxes.forEach((checkBox, index)=>{
-  checkBox.addEventListener('click', ()=>firstClick=index);
-});
-  document.addEventListener('keydown',(e)=>{
-    console.log(e,index);
-  });
 
+const secondSelected = (secondClick) => {
+  if (firstClick < secondClick) {
+    for (let i=firstClick ; i <= secondClick ; i ++){
+        checkBoxes[i].checked=true;
+    }
+  } else {
+    for (let i=firstClick; i >=  secondClick ; i --){
+        checkBoxes[i].checked=true;
+    }
+  }
+  console.timeEnd('tempo function');
 
+};
+
+checkBoxes.forEach((checkBox, index)=>
+  checkBox.addEventListener('click', (e)=> {
+console.time('tempo function');
+  
+  e.shiftKey
+      ? secondSelected(index)
+      : firstClick=index
+  }
+));
 
 </script>
 </body>

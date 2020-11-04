@@ -40,12 +40,21 @@ btnNewGameEl.addEventListener('click', () => {
   initializeGame();
 });
 
+const switchPlayer = function () {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  currentScore = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
+};
+
 btnRollDiceEl.addEventListener('click', () => {
   if (!endGame) {
     const diceValue = Math.trunc(Math.random() * 6 + 1);
     diceEl.src = `dice-${diceValue}.png`;
     diceEl.classList.remove('hidden');
     if (diceValue === 1) {
+      // switchPlayer();
       currentValue = 0;
       currentScore0El.textContent = currentValue;
       activePlayer = !activePlayer;
